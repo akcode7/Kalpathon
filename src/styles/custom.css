@@ -1,3 +1,8 @@
+/* font */
+* {
+    font-family: "Kanit", sans-serif;
+}  
+
 .neon-line {
     position: absolute;
     height: 2px;
