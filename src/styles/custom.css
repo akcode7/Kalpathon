@@ -1,0 +1,138 @@
+.neon-line {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, #00bfff, #ff00ff);
+    bottom: 0;
+    left: -100%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 191, 255, 0.7), 0 0 10px rgba(255, 0, 255, 0.7);
+    z-index: 1;
+}
+
+.menu-item a:hover .neon-line {
+    animation: tiltLine 0.5s ease forwards;
+}
+
+@keyframes tiltLine {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(-2deg);
+    }
+}
+
+/* Add this to make text expand smoothly */
+.menu-item a {
+    display: inline-block;
+    transform-origin: left;
+}
+
+/* Custom scrollbar for menu */
+.menu-scroll {
+    max-height: 30vh;
+    overflow-y: auto;
+}
+
+.menu-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Close button neon ring styles */
+#closeMenuBtn {
+   
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: visible;
+    transition: transform 0.3s ease;
+}
+
+#closeMenuBtn:hover {
+    transform: scale(1.1);
+}
+
+.neon-ring {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background: linear-gradient(90deg, #00bfff, #ff00ff) border-box;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    box-shadow: 
+        0 0 10px rgba(0, 191, 255, 0.7),
+        0 0 20px rgba(255, 0, 255, 0.4);
+    animation: rotateRing 8s linear infinite;
+}
+
+.neon-ring-inner {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background: linear-gradient(270deg, #00bfff, #ff00ff) border-box;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    box-shadow: 
+        0 0 5px rgba(0, 191, 255, 0.7),
+        0 0 10px rgba(255, 0, 255, 0.4);
+    animation: rotateRing 4s linear infinite reverse;
+}
+
+@keyframes rotateRing {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Add a pulse effect when hovered */
+#closeMenuBtn:hover .neon-ring {
+    animation: rotateRing 3s linear infinite, pulseRing 1.5s ease-in-out infinite alternate;
+}
+
+#closeMenuBtn:hover .neon-ring-inner {
+    animation: rotateRing 2s linear infinite reverse, pulseRing 1.5s ease-in-out infinite alternate 0.75s;
+}
+
+@keyframes pulseRing {
+    0% {
+        box-shadow: 
+            0 0 10px rgba(0, 191, 255, 0.7),
+            0 0 20px rgba(255, 0, 255, 0.4);
+    }
+    100% {
+        box-shadow: 
+            0 0 15px rgba(0, 191, 255, 0.9),
+            0 0 30px rgba(255, 0, 255, 0.6),
+            0 0 45px rgba(255, 0, 255, 0.3);
+    }
+}
+
+
+

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/styles/output.css">
+    <link rel="stylesheet" href="../src/styles/custom.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalpathon</title>
+    
+</head>
+<body>
+    <header class="flex fixed justify-between items-center p-4 bg-transparent top-0 left-0 w-full z-50">
+        <div class="logo">
+            <img src="./assets/img/logo.png" class="w-48 " alt="">
+        </div>
+        <div class="menu-btn cursor-pointer" id="menuBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </div>
+        
+        <div id="fullPageMenu" class="fixed inset-0 bg-black bg-opacity-95 z-50 hidden flex-col justify-center items-center">
+            <button id="closeMenuBtn" class="absolute top-4 right-4 text-white">
+                <!-- Rotating neon ring -->
+                <div class="neon-ring"></div>
+                <!-- Inner ring for double effect -->
+                <div class="neon-ring-inner"></div>
+                <!-- Original close icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <nav class="text-left w-full max-w-md px-8 ">
+                <ul id="menuScroll" class="menu-scroll text-white text-3xl space-y-8 text-center py-4">
+                    <li class="menu-item relative overflow-hidden">
+                        <a href="#sponsors" class=" transition-all duration-300 flex items-center group">
+                            <span class="neon-line"></span>
+                            <span class="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-pink-500">REGISTER FOR HACKATHON</span>
+                        </a>
+                    </li>
+                    <li class="menu-item relative overflow-hidden">
+                        <a href="#faq" class=" transition-all duration-300 flex items-center group">
+                            <span class="neon-line"></span>
+                            <span class="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-pink-500">ABOUT US</span>
+                        </a>
+                    </li>
+                    <li class="menu-item relative overflow-hidden">
+                        <a href="#judges" class=" transition-all duration-300 flex items-center group">
+                            <span class="neon-line"></span>
+                            <span class="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-pink-500">JUDGES</span>
+                        </a>
+                    </li>
+                    <li class="menu-item relative overflow-hidden">
+                        <a href="#problems" class=" transition-all duration-300 flex items-center group">
+                            <span class="neon-line"></span>
+                            <span class="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-pink-500">PROBLEM STATEMENTS</span>
+                        </a>
+                    </li>
+                    <li class="menu-item relative overflow-hidden">
+                        <a href="#team" class=" transition-all duration-300 flex items-center group">
+                            <span class="neon-line"></span>
+                            <span class="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500</li> group-hover:to-pink-500">TEAM</span>
+                        </a>
+                    </li>
+                    <li class="menu-item relative overflow-hidden">
+                        <a href="#sponsors" class="hover:text-4xl transition-all duration-300 flex items-center group">
+                            <span class="neon-line"></span>
+                            <span class="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-pink-500">SPONSORS</span>
+                        </a>
+                    </li>
+                    <li class="menu-item relative overflow-hidden">
+                        <a href="#timeline" class="hover:text-4xl transition-all duration-300 flex items-center group">
+                            <span class="neon-line"></span>
+                            <span class="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-pink-500">TIMELINE</span>
+                        </a>
+                    </li>
+                    <li class="menu-item relative overflow-hidden">
+                        <a href="#contact" class=" transition-all duration-300 flex items-center group">
+                            <span class="neon-line"></span>
+                            <span class="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-pink-500">CONTACT US</span>
+                        </a>
+                    </li>
+                    <li class="menu-item relative overflow-hidden">
+                        <a href="#faq" class=" transition-all duration-300 flex items-center group">
+                            <span class="neon-line"></span>
+                            <span class="relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-pink-500">FAQ</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="scroll-container">
+        <!-- Hero Section -->
+        <section class="section h-screen w-full flex items-center justify-center relative hero-video-section" id="hero">
+            <video autoplay muted class="absolute inset-0 w-full h-full object-cover z-0 hero-video" playsinline>
+            <source src="./assets/herovideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+           
+            <div class="py-12 relative z-10">
+            <h1 class="text-center font-bold text-8xl text-white ">Kalpathon</h1>
+            <p class="text-center text-4xl mt-4 font-bold text-white ">Code, Collaborate, Conquer</p>
+            </div>
+            <div class="absolute bottom-20 w-full flex justify-center z-10 text-white animate-bounce">
+            <div class="flex flex-col items-center">
+                <p class="text-sm mb-2">Scroll to explore</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </div>
+            </div>
+           
+        </section>
+
+        <!-- About Kalpathon'25 -->
+        <section class="section h-screen w-full flex items-center justify-center bg-black" id="Aboutus">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto bg-black/40 backdrop-blur-lg p-8 rounded-2xl border border-opacity-20 border-white shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                    <h2 class="text-center font-bold text-6xl mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500">About Kalpathon'25</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="text-center">
+                            <p class="text-2xl text-white leading-relaxed">
+                                🚀 Unleash your potential at <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-500 font-bold">Kalpathon'25</span> - Where Innovation Meets Excellence!
+                            </p>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-blue-500/10 to-pink-500/10 p-6 rounded-xl border border-opacity-20 border-white">
+                            <p class="text-lg text-white/90 leading-relaxed">
+                                Experience an extraordinary <span class="text-blue-400">48-hour hybrid hackathon</span> where brilliant minds converge to transform ideas into reality. Dive into a world of cutting-edge technology, collaborative innovation, and limitless possibilities.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+                            <div class="p-4 text-center hover:scale-105 transition-transform">
+                                <div class="text-pink-500 text-2xl mb-2">💡</div>
+                                <h3 class="text-blue-400 font-semibold">Create</h3>
+                                <p class="text-white/80">Build groundbreaking solutions</p>
+                            </div>
+                            <div class="p-4 text-center hover:scale-105 transition-transform">
+                                <div class="text-blue-500 text-2xl mb-2">🤝</div>
+                                <h3 class="text-pink-400 font-semibold">Collaborate</h3>
+                                <p class="text-white/80">Network with tech enthusiasts</p>
+                            </div>
+                            <div class="p-4 text-center hover:scale-105 transition-transform">
+                                <div class="text-pink-500 text-2xl mb-2">🏆</div>
+                                <h3 class="text-blue-400 font-semibold">Conquer</h3>
+                                <p class="text-white/80">Win exciting prizes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         <!-- Event Schedule -->
+         <section class="section h-screen w-full flex items-center justify-center" id="Aboutus">
+            <div class="py-12">
+                <h2 class="text-center font-bold text-6xl">Event Schedule</h2>
+                <p class="text-center text-2xl mt-4">We a ino</p>
+                <!-- Event content here -->
+            </div>
+        </section>
+        
+        <!-- Judges Section -->
+        <section class="section h-screen w-full flex items-center justify-center" id="judges">
+            <div class="py-12">
+                <h2 class="text-center font-bold text-6xl">Judges</h2>
+                <p class="text-center text-2xl mt-4">Meet our expert panel</p>
+                <!-- Judges content here -->
+            </div>
+        </section>
+        
+        <!-- Problem Statements Section -->
+        <section class="section h-screen w-full flex items-center justify-center" id="problems">
+            <div class="py-12">
+                <h2 class="text-center font-bold text-6xl">Problem Statements</h2>
+                <p class="text-center text-2xl mt-4">Challenge yourself</p>
+                <!-- Problem statements content here -->
+            </div>
+        </section>
+        
+        <!-- Team Section -->
+        <section class="section h-screen w-full flex items-center justify-center" id="team">
+            <div class="py-12">
+                <h2 class="text-center font-bold text-6xl">Team</h2>
+                <p class="text-center text-2xl mt-4">The people behind Kalpathon</p>
+                <!-- Team content here -->
+            </div>
+        </section>
+        
+        <!-- Sponsors Section -->
+        <section class="section h-screen w-full flex items-center justify-center" id="sponsors">
+            <div class="py-12">
+                <h2 class="text-center font-bold text-6xl">Sponsors</h2>
+                <p class="text-center text-2xl mt-4">Our valuable partners</p>
+                <!-- Sponsors content here -->
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../src/scripts/index.js"></script>
+</body>
+</html>
