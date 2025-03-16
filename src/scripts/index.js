@@ -231,5 +231,29 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         setupScrollVideo();
     }, 100);
+
+    //horizontal scrolling .races
+    const races = document.querySelector(".races");
+    console.log(races.offsetWidth);
+    function getScrollAmount() {
+        let racesWidth = races.scrollWidth;
+        return -(racesWidth - window.innerWidth);
+    }
+
+    const tween = gsap.to(races, {
+        x: getScrollAmount,
+        duration: 3,
+        ease: "none",
+    });
+    ScrollTrigger.create({
+        trigger: ".racesWrapper",
+        start: "top 10%",
+        end: () => `+=${getScrollAmount() * -1}`,
+        pin: true,
+        animation: tween,
+        scrub: 1,
+        markers: true,
+        invalidateOnRefresh: true
+    });
     
 });
