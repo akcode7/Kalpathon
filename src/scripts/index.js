@@ -208,19 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ScrollTrigger.refresh();
             });
             
-            // Add an overlay that changes opacity based on scroll
-            const overlay = document.querySelector('#hero .opacity-30');
-            if (overlay) {
-                gsap.to(overlay, {
-                    opacity: 0.7,
-                    scrollTrigger: {
-                        trigger: '#hero',
-                        start: 'top top',
-                        end: '+=100%',
-                        scrub: true
-                    }
-                });
-            }
+            
         });
         
         // Error handling for video
