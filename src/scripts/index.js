@@ -232,28 +232,22 @@ document.addEventListener('DOMContentLoaded', () => {
         setupScrollVideo();
     }, 100);
 
-    //horizontal scrolling .races
-    const races = document.querySelector(".races");
-    console.log(races.offsetWidth);
-    function getScrollAmount() {
-        let racesWidth = races.scrollWidth;
-        return -(racesWidth - window.innerWidth);
-    }
+  //horizontal scroll gsap
+  gsap.registerPlugin(ScrollTrigger);
 
-    const tween = gsap.to(races, {
-        x: getScrollAmount,
-        duration: 3,
-        ease: "none",
-    });
-    ScrollTrigger.create({
-        trigger: ".racesWrapper",
-        start: "top 10%",
-        end: () => `+=${getScrollAmount() * -1}`,
-        pin: true,
-        animation: tween,
-        scrub: 1,
-        markers: true,
-        invalidateOnRefresh: true
-    });
-    
+let sections = gsap.utils.toArray(".slide");
+
+gsap.to(sections, {
+  xPercent: -100 * (sections.length - 1),
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".start-scroll",
+    pin: true,
+    markers: true,
+    scrub: 1,
+    snap: 1 / (sections.length - 1),
+    end: () => "+=" + document.querySelector(".start-scroll").offsetWidth
+  }
+});
+
 });
