@@ -232,8 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setupScrollVideo();
     }, 100);
 
-  
- 
+    
 });
 
 
