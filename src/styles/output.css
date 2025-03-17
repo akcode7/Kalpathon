@@ -371,6 +371,15 @@
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
+  .h-\[0vh\] {
+    height: 0vh;
+  }
+  .h-\[20vh\] {
+    height: 20vh;
+  }
+  .h-\[30vh\] {
+    height: 30vh;
+  }
   .h-\[40vh\] {
     height: 40vh;
   }
@@ -683,6 +692,9 @@
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
   }
+  .py-40 {
+    padding-block: calc(var(--spacing) * 40);
+  }
   .ps-5 {
     padding-inline-start: calc(var(--spacing) * 5);
   }
@@ -691,6 +703,9 @@
   }
   .pt-10 {
     padding-top: calc(var(--spacing) * 10);
+  }
+  .pb-12 {
+    padding-bottom: calc(var(--spacing) * 12);
   }
   .pb-20 {
     padding-bottom: calc(var(--spacing) * 20);
