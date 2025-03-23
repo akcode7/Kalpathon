@@ -12,7 +12,7 @@ function initHorizontalScroll() {
         scrollTrigger: {
             trigger: ".start-scroll",
             pin: true,
-            markers: true,
+            markers: false,
             scrub: 1,
           
             snap: 1 / (sections.length - 1),

@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, '-=0.5');
             }
             
-            // Add a scroll hint that disappears after scrolling starts
+            //  scroll hint that disappears after scrolling starts
             const scrollHint = document.querySelector('#hero .animate-bounce');
             if (scrollHint) {
                 ScrollTrigger.create({
