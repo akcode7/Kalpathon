@@ -11,7 +11,7 @@
     <title>Kalpathon</title>
     
 </head>
-<body >
+<body class="bg-black">
      <!-- Preloader overlay -->
      <div id="preloader" class="fixed inset-0 bg-black z-[9999] flex items-center justify-center">
         <video id="preloaderVideo" class="max-w-full max-h-full object-cover" autoplay muted playsinline>
@@ -184,31 +184,18 @@
     </div>
 </div>
     
+<!-- hero section starts -->
 
-<main class="scroll-container">
-        <!-- Hero Section -->
-        <section class="section h-screen w-full flex items-center justify-center relative hero-video-section" id="hero">
 
-            <video autoplay muted class="absolute inset-0 w-full h-full object-cover z-0 hero-video" playsinline>
-            <source src="./public/assets/herovideo3.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-            </video>
-           
-            <div class="py-12 relative z-10">
-            <h1 class="text-center font-bold text-6xl lg:text-8xl text-white ">Kalpathon</h1>
-            <p class="text-center text-4xl mt-4 font-bold text-white ">Code, Collaborate, Conquer</p>
-            </div>
-            <div class="absolute bottom-20 w-full flex justify-center z-10 text-white animate-bounce">
-            <div class="flex flex-col items-center">
-                <p class="text-sm mb-2">Scroll to explore</p>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-            </div>
-            </div>
-           
-        </section>
-      </main>
+ 
+<div class="text-container">
+    <div class="text">KALPATHON</div>
+    <div class="text-gradient">KALPATHON</div>
+    <h1 class="text-white text-4xl">CODE, COLLABORATE, CONQUER</h1>
+</div>
+
+
+<!-- hero section ends -->
 <!-- about starts -->
 
 <div class="bg-black py-12">
@@ -688,7 +675,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./src/scripts/index.js"></script>
-    <script src="./src/scripts/scroll-trigger.js"></script>
+    <script src="./src/scripts/herotxt.js"></script>
     
 </body>
 </html>

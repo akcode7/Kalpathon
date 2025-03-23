@@ -148,3 +148,64 @@
 }
 
 
+.text-container {
+    position: relative;
+    cursor: default;
+    text-align: center;
+    width: 100%;
+    margin-top: 150px;
+    
+}
+
+.text {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(3rem, 15vw, 12rem);
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+    transition: -webkit-text-stroke 0.3s ease;
+    white-space: nowrap;
+}
+
+.text-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(3rem, 15vw, 12rem);
+    font-weight: bold;
+    background: linear-gradient(
+        45deg,
+        #eab308, #ef4444, #3b82f6, #06b6d4, #8b5cf6
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px transparent;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    clip-path: circle(0% at 50% 50%);
+    white-space: nowrap;
+}
+
+.tagline {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    margin-top: 1rem;
+}
+
+/* Show gradient effect on hover for desktop */
+@media (hover: hover) {
+    .text-container:hover .text-gradient {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* For mobile, show the gradient when active class is added */
+.text-gradient.active {
+    opacity: 1;
+    transform: scale(1);
+}
