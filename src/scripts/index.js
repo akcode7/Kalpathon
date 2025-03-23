@@ -299,7 +299,7 @@ function menuToggle() {
 }
   menuToggle();
 
-//add hidden class to this id id="preloader" after 4 seconds and also slide up transition
+//adds hidden class to this id id="preloader" after 4 seconds and also slide up transition
 document.addEventListener('DOMContentLoaded', function() {
     const preloader = document.getElementById('preloader');
     
@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 preloader.classList.add('hidden');
             }, 1000); // Match this to your transition duration
-        }, 3500);
+        }, 4000);
     }
 });
 
