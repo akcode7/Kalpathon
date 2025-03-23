@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 start: 'top top',
                 end: '+=300%', // Adjust this value to control how long the scroll effect lasts
                 pin: true,     // Pin the section while the effect is active
-                scrub: 1,    // Smooth scrolling effect with slight delay for better user experience
+                scrub: 2,    // Smooth scrolling effect with slight delay for better user experience
                 markers: false, // Set to true for debugging
                 onUpdate: self => {
                     // Map scroll progress (0 to 1) to video time
