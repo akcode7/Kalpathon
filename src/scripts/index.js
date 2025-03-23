@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menuBtn.addEventListener('click', () => {
             if (clickSound) playSound(clickSound);
             if (hoverSound) playSound(hoverSound);
+            console.log('Menu button clicked');
             
             fullPageMenu.classList.remove('hidden');
             fullPageMenu.classList.add('flex');
@@ -299,6 +300,8 @@ function menuToggle() {
 }
   menuToggle();
 
+
+
 //adds hidden class to this id id="preloader" after 4 seconds and also slide up transition
 document.addEventListener('DOMContentLoaded', function() {
     const preloader = document.getElementById('preloader');
@@ -315,4 +318,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+const stmenuBtn = document.getElementById('stmenuBtn');
+const stfullPageMenu = document.getElementById('stfullPageMenu');
+const stcloseMenuBtn = document.getElementById('stcloseMenuBtn');
+
+    // Open menu when menu button is clicked
+    stmenuBtn.addEventListener('click', () => {
+       
+        console.log('Menu button clicked');
+        
+        stfullPageMenu.classList.remove('hidden');
+        stfullPageMenu.classList.add('flex');
+        
+        // Trigger animation after a small delay to ensure display change has taken effect
+        setTimeout(() => {
+            stfullPageMenu.style.transform = 'translateY(0)';
+        }, 10);
+        
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+    });
+
+    stcloseMenuBtn.addEventListener('click', () => {
+       
+        
+        stfullPageMenu.style.transform = 'translateY(100%)';
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+            stfullPageMenu.classList.remove('flex');
+            stfullPageMenu.classList.add('hidden');
+        }, 800); // Match this to your transition duration
+        document.body.style.overflow = ''; // Re-enable scrolling
+    });
+    
+    
 
