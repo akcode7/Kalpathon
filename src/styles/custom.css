@@ -138,6 +138,21 @@
             0 0 45px rgba(255, 0, 255, 0.3);
     }
 }
+.scrollhide{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blink {
+    animation: blink 1.5s infinite;
+    background: red;
+}
 
 

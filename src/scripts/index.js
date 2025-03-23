@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     try {
         // Try to load the audio files with correct paths
-        clickSound = new Audio('./assets/mouse.mp3'); 
-        hoverSound = new Audio('./assets/hover.mp3');
-        linkhover = new Audio('./assets/scroll.mp3');
+        clickSound = new Audio('./public/assets/mouse.mp3'); 
+        hoverSound = new Audio('./public/assets/hover.mp3');
+        linkhover = new Audio('./public/assets/scroll.mp3');
         
         // Preload the audio files to check if they exist
         clickSound.load();
@@ -233,6 +233,86 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
 
     
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all accordion items
+    const accordionButtons = document.querySelectorAll('[data-accordion-target]');
+    
+    // Add click event listener to each accordion button
+    accordionButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Get target content ID from data attribute
+        const targetId = this.getAttribute('data-accordion-target');
+        const targetContent = document.querySelector(targetId);
+        
+        // Toggle aria-expanded attribute
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        
+        // Toggle content visibility
+        targetContent.classList.toggle('hidden');
+        
+        // Rotate the arrow icon
+        const icon = this.querySelector('[data-accordion-icon]');
+        if (icon) {
+          icon.classList.toggle('rotate-180');
+        }
+      });
+    });
+    
+    // Open the first accordion item by default
+    if (accordionButtons.length > 0) {
+      const firstButton = accordionButtons[0];
+      const firstTargetId = firstButton.getAttribute('data-accordion-target');
+      const firstContent = document.querySelector(firstTargetId);
+      
+      firstButton.setAttribute('aria-expanded', 'true');
+      firstContent.classList.remove('hidden');
+    }
+  });
+
+  //write a function to toggle hidden class in id="stickymenu" and id = "header" when the user scrolls down and when reaching top window also add transition
+function menuToggle() {
+    const header = document.getElementById('header');
+    const stickyMenu = document.getElementById('stickymenu');
+    
+    if (header && stickyMenu) {
+        // Add initial transition styles
+        header.style.transition = 'opacity 2s ease';
+        stickyMenu.style.transition = 'opacity 2s ease';
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                header.classList.add('hidden');
+                header.style.opacity = '0';
+                stickyMenu.classList.remove('hidden');
+                stickyMenu.style.opacity = '1';
+            } else {
+                header.classList.remove('hidden');
+                header.style.opacity = '1';
+                stickyMenu.classList.add('hidden');
+                stickyMenu.style.opacity = '0';
+            }
+        });
+    }
+}
+  menuToggle();
+
+//add hidden class to this id id="preloader" after 4 seconds and also slide up transition
+document.addEventListener('DOMContentLoaded', function() {
+    const preloader = document.getElementById('preloader');
+    
+    if (preloader) {
+        setTimeout(() => {
+            preloader.style.transition = 'transform 1s ease, opacity 1s ease';
+            preloader.style.transform = 'translateY(-100%)';
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+            }, 1000); // Match this to your transition duration
+        }, 3500);
+    }
 });
 
 
