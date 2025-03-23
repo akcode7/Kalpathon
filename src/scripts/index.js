@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 start: 'top top',
                 end: '+=300%', // Adjust this value to control how long the scroll effect lasts
                 pin: true,     // Pin the section while the effect is active
-                scrub: 0.5,    // Smooth scrolling effect with slight delay for better user experience
+                scrub: 1,    // Smooth scrolling effect with slight delay for better user experience
                 markers: false, // Set to true for debugging
                 onUpdate: self => {
                     // Map scroll progress (0 to 1) to video time
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  //write a function to toggle hidden class in id="stickymenu" and id = "header" when the user scrolls down and when reaching top window also add transition
+
 function menuToggle() {
     const header = document.getElementById('header');
     const stickyMenu = document.getElementById('stickymenu');
