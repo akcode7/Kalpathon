@@ -8,6 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../src/scripts/preloader.js"></script>
+      <!-- Flickity CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.min.css">
     <title>Kalpathon</title>
     <style>
         .team:hover .team-img{
@@ -21,6 +23,34 @@
                     border-radius: 10px;
                     border: 1px solid rgba( 255, 255, 255, 0.18 );
         }
+
+
+
+           /* Custom styles for better navigation appearance */
+    .flickity-button {
+      background: rgba(255, 255, 255, 0.75);
+    }
+    .flickity-button:hover {
+      background: white;
+    }
+    .flickity-prev-next-button {
+      width: 40px;
+      height: 40px;
+    }
+    .flickity-button-icon {
+      fill: #333;
+    }
+    .gallery-cell {
+      width: 100%;
+      height: 100%;
+      margin-right: 10px;
+    }
+    /* Make sure carousel takes full width on mobile */
+    @media (min-width: 640px) {
+      .gallery-cell {
+        width: 33%;
+      }
+    }
     </style>
     
 </head>
@@ -531,6 +561,70 @@
 
             <!-- Problem statement -->
 
+    <div class="container mx-auto pb-40">
+        <h1 class="text-3xl font-bold mb-6 text-center">Flickity Carousel</h1>
+        
+        <!-- Flickity Gallery Container -->
+        <!-- Note: Flickity needs a single container without grid classes -->
+        <div class="main-carousel">
+            <!-- Slide 1 -->
+            <div class="gallery-cell py-20 px-10 rounded-2xl">
+                <div class="team">
+                    <div class="text-center">
+                        <p class="group-hover:opacity-0 opacity-100 transition-all duration-300">Problem 1</p>
+                        <h3 class="capitalize font-medium text-slate-200 text-sm md:text-lg py-2">Problem Short Desc</h3>
+                    </div>
+                    <p class="text-left py-6 tracking-wide text-sm sm:text-base md:text-lg font-light">
+                        <span class="font-semibold text-pink">Category: </span>
+                        <span class="text-slate-200 capitalize">Real Time Analytics &amp; A.I Domain</span>
+                    </p>
+                    <p class="text-slate-200 text-left text-pretty sm:my-4 text-[0.85rem] sm:text-base flex items-center">Pathway specializes in real-time data processing, streaming analytics, and AI-driven workflows. It supports event-driven architectures, ETL pipelines, and unstructured data, enabling RAG, dynamic ETL, and AI-powered decision-making in big data and knowledge engineering.The prize distribution for the event, sponsored by Pathway, is as follows  =&gt; { 1st place: 5000 INR ;2nd place: 3000 INR &amp; 3rd place: 2000 INR }</p>
+                    <p class="text-slate-200 text-left text-pretty sm:my-2 my-3 text-[0.85rem] sm:text-base flex items-center">Problem Statement :
+                        <a href="https://shorturl.at/GR0nn" target="_blank" rel="noopener noreferrer" class="text-pink hover:text-white transition-all duration-300">https://shorturl.at/GR0nn</a>
+                    </p>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <div class="team">
+                    <div>
+                        <p class="group-hover:opacity-0 opacity-100 transition-all duration-300">Problem 1</p>
+                        <h3 class="capitalize font-medium text-slate-200 text-sm md:text-lg py-2">Problem Short Desc</h3>
+                    </div>
+                    <p class="text-left py-6 tracking-wide text-sm sm:text-base md:text-lg font-light">
+                        <span class="font-semibold text-pink">Category: </span>
+                        <span class="text-slate-200 capitalize">Real Time Analytics &amp; A.I Domain</span>
+                    </p>
+                    <p class="text-slate-200 text-left text-pretty sm:my-4 text-[0.85rem] sm:text-base flex items-center">Pathway specializes in real-time data processing, streaming analytics, and AI-driven workflows. It supports event-driven architectures, ETL pipelines, and unstructured data, enabling RAG, dynamic ETL, and AI-powered decision-making in big data and knowledge engineering.The prize distribution for the event, sponsored by Pathway, is as follows  =&gt; { 1st place: 5000 INR ;2nd place: 3000 INR &amp; 3rd place: 2000 INR }</p>
+                    <p class="text-slate-200 text-left text-pretty sm:my-2 my-3 text-[0.85rem] sm:text-base flex items-center">Problem Statement :
+                        <a href="https://shorturl.at/GR0nn" target="_blank" rel="noopener noreferrer" class="text-pink hover:text-white transition-all duration-300">https://shorturl.at/GR0nn</a>
+                    </p>
+                </div>
+            </div>
+            <div class="gallery-cell">
+                <div class="team">
+                    <div>
+                        <p class="group-hover:opacity-0 opacity-100 transition-all duration-300">Problem 1</p>
+                        <h3 class="capitalize font-medium text-slate-200 text-sm md:text-lg py-2">Problem Short Desc</h3>
+                    </div>
+                    <p class="text-left py-6 tracking-wide text-sm sm:text-base md:text-lg font-light">
+                        <span class="font-semibold text-pink">Category: </span>
+                        <span class="text-slate-200 capitalize">Real Time Analytics &amp; A.I Domain</span>
+                    </p>
+                    <p class="text-slate-200 text-left text-pretty sm:my-4 text-[0.85rem] sm:text-base flex items-center">Pathway specializes in real-time data processing, streaming analytics, and AI-driven workflows. It supports event-driven architectures, ETL pipelines, and unstructured data, enabling RAG, dynamic ETL, and AI-powered decision-making in big data and knowledge engineering.The prize distribution for the event, sponsored by Pathway, is as follows  =&gt; { 1st place: 5000 INR ;2nd place: 3000 INR &amp; 3rd place: 2000 INR }</p>
+                    <p class="text-slate-200 text-left text-pretty sm:my-2 my-3 text-[0.85rem] sm:text-base flex items-center">Problem Statement :
+                        <a href="https://shorturl.at/GR0nn" target="_blank" rel="noopener noreferrer" class="text-pink hover:text-white transition-all duration-300">https://shorturl.at/GR0nn</a>
+                    </p>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            
+        </div>
+        
+    </div>
+
+
+
+
     <div class=" h-[100vh] start-scroll flex overflow-hidden bg-black py-8" id="pinnedcn">
         
         <div class="grid grid-cols-2">
@@ -700,6 +794,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./src/scripts/index.js"></script>
     <script src="./src/scripts/scroll-trigger.js"></script>
+     <!-- Swiper JS CDN -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js"></script>
+  
+     <script>
+       // Initialize Flickity
+       var flkty = new Flickity('.main-carousel', {
+         cellAlign: 'left',
+         contain: true,
+         prevNextButtons: true,
+         pageDots: false,
+         autoPlay: 3000,
+         wrapAround: true
+       });
+       
+      
+     </script>
+
     
 </body>
 </html>
