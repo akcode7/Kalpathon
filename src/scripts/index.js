@@ -91,147 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Enhanced scroll-triggered video functionality
-    gsap.registerPlugin(ScrollTrigger);
-    
-    function setupScrollVideo() {
-        const video = document.querySelector('.hero-video');
-        
-        if (!video) {
-            console.warn('Video element not found');
-            return;
-        }
-        
-        // First, correct the video path if needed
-        const videoSource = video.querySelector('source');
-        if (videoSource && videoSource.src.includes('../../public/')) {
-            videoSource.src = videoSource.src.replace('../../public/', './');
-            video.load(); // Reload video with corrected path
-        }
-        
-        console.log('Setting up scroll video');
-        
-        // Load metadata to get video duration
-        video.addEventListener('loadedmetadata', () => {
-            const videoDuration = video.duration;
-            console.log(`Video duration: ${videoDuration} seconds`);
-            
-            // Keep track of the current frame/time
-            let currentFrame = 0;
-            
-            // Pause video initially and make sure it's ready
-            video.pause();
-            video.currentTime = 0;
-            
-            // Create a ScrollTrigger instance
-            const scrollTrigger = ScrollTrigger.create({
-                trigger: '#hero',
-                start: 'top top',
-                end: '+=300%', // Adjust this value to control how long the scroll effect lasts
-                pin: true,     // Pin the section while the effect is active
-                scrub: 2,    // Smooth scrolling effect with slight delay for better user experience
-                markers: false, // Set to true for debugging
-                onUpdate: self => {
-                    // Map scroll progress (0 to 1) to video time
-                    const targetTime = self.progress * videoDuration;
-                    
-                    // Only update if there's a significant change to improve performance
-                    if (Math.abs(video.currentTime - targetTime) > 0.01) {
-                        video.currentTime = targetTime;
-                        currentFrame = targetTime;
-                    }
-                },
-                onEnter: () => {
-                    console.log('Entered video section');
-                },
-                onLeave: () => {
-                    console.log('Left video section');
-                }
-            });
-            
-            // Add title animation
-            const title = document.querySelector('#hero h1');
-            const subtitle = document.querySelector('#hero p');
-            
-            if (title && subtitle) {
-                // Reset position first
-                gsap.set([title, subtitle], { y: 50, opacity: 0 });
-                
-                // Create animation timeline
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: '#hero',
-                        start: 'top center',
-                        toggleActions: 'play none none reverse',
-                    }
-                });
-                
-                tl.to(title, {
-                    y: 0,
-                    opacity: 1,
-                    duration: 1,
-                    ease: 'power3.out'
-                })
-                .to(subtitle, {
-                    y: 0,
-                    opacity: 1,
-                    duration: 1,
-                    ease: 'power3.out'
-                }, '-=0.5');
-            }
-            
-            //  scroll hint that disappears after scrolling starts
-            const scrollHint = document.querySelector('#hero .animate-bounce');
-            if (scrollHint) {
-                ScrollTrigger.create({
-                    trigger: '#hero',
-                    start: 'top top',
-                    end: 'top+=100 top',
-                    onEnter: () => {
-                        gsap.to(scrollHint, {
-                            opacity: 0,
-                            y: 20,
-                            duration: 0.5
-                        });
-                    },
-                    onEnterBack: () => {
-                        gsap.to(scrollHint, {
-                            opacity: 1,
-                            y: 0,
-                            duration: 0.5
-                        });
-                    }
-                });
-            }
-            
-            // Handle resize to maintain proper scrolling
-            window.addEventListener('resize', () => {
-                ScrollTrigger.refresh();
-            });
-            
-            
-        });
-        
-        // Error handling for video
-        video.addEventListener('error', (e) => {
-            console.error('Video error:', e);
-            
-            // Add fallback background if video fails
-            const heroSection = document.querySelector('#hero');
-            if (heroSection) {
-                heroSection.style.backgroundImage = 'linear-gradient(135deg, #000428 0%, #004e92 100%)';
-                heroSection.classList.add('video-error');
-            }
-        });
-        
-        // Start loading the video
-        video.load();
-    }
-    
-    // Small delay to ensure DOM is fully loaded
-    setTimeout(() => {
-        setupScrollVideo();
-    }, 100);
+   
 
     
 });
@@ -349,6 +209,43 @@ const stcloseMenuBtn = document.getElementById('stcloseMenuBtn');
         }, 800); // Match this to your transition duration
         document.body.style.overflow = ''; // Re-enable scrolling
     });
+
+      // Close menu when close button is clicked
+      stcloseMenuBtn.addEventListener('click', () => {
+       
+        
+        stfullPageMenu.style.transform = 'translateY(100%)';
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+            stfullPageMenu.classList.remove('flex');
+            stfullPageMenu.classList.add('hidden');
+        }, 800); // Match this to your transition duration
+        document.body.style.overflow = ''; // Re-enable scrolling
+    });
+    
+    // Close menu when clicking on menu links
+    const menuLinks = stfullPageMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        // Click sound for links
+        link.addEventListener('click', () => {
+           
+            stfullPageMenu.style.transform = 'translateY(100%)';
+            setTimeout(() => {
+                stfullPageMenu.classList.remove('flex');
+                stfullPageMenu.classList.add('hidden');
+            }, 800);
+            document.body.style.overflow = '';
+        });
+    });
+
+    //add hover sound for links
+    menuLinks.forEach(link => {
+        link.addEventListener('mouseover', () => {
+            if (linkhover) playSound(linkhover);
+        });
+    });
+
+
     
     
 
