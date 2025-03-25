@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 4000);
     }
 });
-
+//sticky-menu
 const stmenuBtn = document.getElementById('stmenuBtn');
 const stfullPageMenu = document.getElementById('stfullPageMenu');
 const stcloseMenuBtn = document.getElementById('stcloseMenuBtn');
