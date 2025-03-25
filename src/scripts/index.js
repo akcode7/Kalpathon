@@ -245,7 +245,42 @@ const stcloseMenuBtn = document.getElementById('stcloseMenuBtn');
         });
     });
 
-
+document.addEventListener('DOMContentLoaded', function() {
+      // Get all accordion items
+      const accordionButtons = document.querySelectorAll('[data-accordion-target]');
+      
+      // Add click event listener to each accordion button
+      accordionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Get target content ID from data attribute
+          const targetId = this.getAttribute('data-accordion-target');
+          const targetContent = document.querySelector(targetId);
+          
+          // Toggle aria-expanded attribute
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !isExpanded);
+          
+          // Toggle content visibility
+          targetContent.classList.toggle('hidden');
+          
+          // Rotate the arrow icon
+          const icon = this.querySelector('[data-accordion-icon]');
+          if (icon) {
+            icon.classList.toggle('rotate-180');
+          }
+        });
+      });
+      
+      // Open the first accordion item by default
+      if (accordionButtons.length > 0) {
+        const firstButton = accordionButtons[0];
+        const firstTargetId = firstButton.getAttribute('data-accordion-target');
+        const firstContent = document.querySelector(firstTargetId);
+        
+        firstButton.setAttribute('aria-expanded', 'true');
+        firstContent.classList.remove('hidden');
+      }
+    });
     
     
 
